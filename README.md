@@ -8,3 +8,5 @@ Por actualizar:
 - La conexión de base de datos
 
 - Modulo de nueva-actividad
+
+Pruebalo con solo: git clone https://github.com/TheLarryBot/AcademiX y luego pip install -r requirements.txt     :)
