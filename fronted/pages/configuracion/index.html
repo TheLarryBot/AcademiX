@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Configuración — AcademiX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/fronted/css/style.css">
+  <style>
+    .config-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; max-width:900px; }
+    .system-row { display:flex; justify-content:space-between; align-items:center; padding:10px 14px; border-radius:var(--radius-md); margin-bottom:8px; }
+    .system-row:last-child { margin-bottom:0; }
+    .system-row strong { font-size:13px; color:var(--gray-700); display:block; }
+    .system-row span { font-size:12.5px; font-weight:600; }
+  </style>
+</head>
+<body>
+<header class="topbar">
+  <a href="../dashboard/" class="topbar-brand"><div class="topbar-logo">A</div><div class="topbar-brand-text"><strong>AcademiX</strong><span>Gestión de Extensión</span></div></a>
+  <div class="topbar-spacer"></div>
+  <div class="topbar-actions">
+    <button class="topbar-btn"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6 6 0 10-12 0v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg><span class="notif-dot"></span></button>
+    <button class="topbar-btn"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg></button>
+  </div>
+</header>
+<nav class="sidebar">
+  <a class="sidebar-item" data-page="dashboard" href="../dashboard/"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>Dashboard</a>
+  <a class="sidebar-item" data-page="actividades" href="../actividades/"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>Actividades</a>
+  <a class="sidebar-item" data-page="nueva-actividad" href="../nueva-actividad/"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 4v16m8-8H4"/></svg>Nueva Actividad</a>
+  <a class="sidebar-item" data-page="busqueda-avanzada" href="../busqueda-avanzada/"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>Búsqueda Avanzada</a>
+  <div class="sidebar-divider"></div>
+  <a class="sidebar-item" data-page="reportes" href="../reportes/"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>Reportes</a>
+  <a class="sidebar-item" data-page="generador-ia" href="../generador-ia/"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>Generador IA</a>
+  <div class="sidebar-divider"></div>
+  <a class="sidebar-item" data-page="historial" href="../historial/"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Historial</a>
+  <a class="sidebar-item" data-page="usuarios" href="../usuarios/"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>Usuarios</a>
+  <a class="sidebar-item active" data-page="configuracion" href="../configuracion/"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><circle cx="12" cy="12" r="3" stroke-width="1.8"/></svg>Configuración</a>
+</nav>
+<main class="main">
+  <div class="page-header"><h1>Configuración</h1><p>Administra las preferencias del sistema</p></div>
+  <div class="config-grid">
+
+    <!-- Perfil -->
+    <div class="card">
+      <div class="card-title">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+        Perfil de Usuario
+      </div>
+      <div class="form-group">
+        <label class="form-label">Nombre Completo</label>
+        <input type="text" class="form-control" id="nombre" placeholder="Tu nombre">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Correo Electrónico</label>
+        <input type="email" class="form-control" id="correo" placeholder="correo@academix.edu.co">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Facultad</label>
+        <input type="text" class="form-control" id="facultad" placeholder="Ej: Facultad de Ingeniería">
+      </div>
+      <button class="btn btn-primary btn-full" id="btn-guardar-perfil">Guardar Cambios</button>
+    </div>
+
+    <!-- Seguridad -->
+    <div class="card">
+      <div class="card-title">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+        Seguridad
+      </div>
+      <div class="form-group">
+        <label class="form-label">Contraseña Actual</label>
+        <input type="password" class="form-control" id="pass-actual" placeholder="••••••••">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Nueva Contraseña</label>
+        <input type="password" class="form-control" id="pass-nueva" placeholder="••••••••">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Confirmar Contraseña</label>
+        <input type="password" class="form-control" id="pass-confirmar" placeholder="••••••••">
+      </div>
+      <button class="btn btn-secondary btn-full" id="btn-cambiar-pass">Cambiar Contraseña</button>
+    </div>
+
+    <!-- Notificaciones -->
+    <div class="card">
+      <div class="card-title">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6 6 0 10-12 0v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+        Notificaciones
+      </div>
+      <div class="toggle-wrap">
+        <div class="toggle-info"><strong>Notificaciones por Email</strong><small>Recibe actualizaciones por correo</small></div>
+        <label class="toggle"><input type="checkbox" id="notif-email"><span class="toggle-slider"></span></label>
+      </div>
+      <div class="toggle-wrap">
+        <div class="toggle-info"><strong>Alertas de Actividades</strong><small>Notificaciones de nuevas actividades</small></div>
+        <label class="toggle"><input type="checkbox" id="notif-actividades"><span class="toggle-slider"></span></label>
+      </div>
+      <div class="toggle-wrap">
+        <div class="toggle-info"><strong>Recordatorios</strong><small>Recordatorios de fechas importantes</small></div>
+        <label class="toggle"><input type="checkbox" id="notif-recordatorios" checked><span class="toggle-slider"></span></label>
+      </div>
+    </div>
+
+    <!-- Sistema -->
+    <div class="card">
+      <div class="card-title">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+        Sistema
+      </div>
+      <div class="system-row" style="background:var(--color-info-soft)">
+        <strong>Versión del Sistema</strong>
+        <span style="color:var(--brand-primary)">v1.0.0</span>
+      </div>
+      <div class="system-row" style="background:var(--color-success-soft)">
+        <strong>Estado de la Base de Datos</strong>
+        <span id="db-estado" style="color:var(--color-success)">Verificando...</span>
+      </div>
+      <div class="system-row" style="background:var(--color-warning-soft)">
+        <strong>Ollama (IA Local)</strong>
+        <span id="ollama-estado" style="color:var(--color-warning)">Verificando...</span>
+      </div>
+      <div class="system-row" style="background:var(--gray-100)">
+        <strong>Última Sincronización</strong>
+        <span id="ultima-sync" style="color:var(--gray-500)">—</span>
+      </div>
+    </div>
+
+  </div>
+</main>
+<script type="module">
+  import { showToast } from '../../js/utils.js';
+
+  /* — Guardar perfil — */
+  document.getElementById('btn-guardar-perfil').addEventListener('click', () => {
+    showToast('Perfil guardado correctamente');
+  });
+
+  /* — Cambiar contraseña — */
+  document.getElementById('btn-cambiar-pass').addEventListener('click', () => {
+    const nueva = document.getElementById('pass-nueva').value;
+    const confirmar = document.getElementById('pass-confirmar').value;
+    if (!nueva) { showToast('Ingresa la nueva contraseña', 'error'); return; }
+    if (nueva !== confirmar) { showToast('Las contraseñas no coinciden', 'error'); return; }
+    showToast('Contraseña actualizada');
+  });
+
+  /* — Estado del sistema — */
+  async function checkStatus() {
+    try {
+      const res = await fetch('http://localhost:5000/api/status');
+      const d = await res.json();
+      document.getElementById('db-estado').textContent = d.db || 'Conectado';
+      document.getElementById('ollama-estado').textContent = d.ollama || 'Activo';
+      document.getElementById('ultima-sync').textContent = 'Hace unos segundos';
+    } catch {
+      document.getElementById('db-estado').textContent = 'Sin conexión';
+      document.getElementById('db-estado').style.color = 'var(--color-danger)';
+      document.getElementById('ollama-estado').textContent = 'Sin conexión';
+      document.getElementById('ollama-estado').style.color = 'var(--color-danger)';
+      document.getElementById('ultima-sync').textContent = 'No disponible';
+    }
+  }
+  checkStatus();
+</script>
+<script src="../../js/sidebar.js"></script>
+</body></html>

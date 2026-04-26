@@ -1,0 +1,4 @@
+/* fronted/css/style.css */
+@import './variables.css';
+@import './components.css';
+@import './layout.css';

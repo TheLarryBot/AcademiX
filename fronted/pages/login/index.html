@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AcademiX — Acceso</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/fronted/css/style.css">
+  <link rel="stylesheet" href="/fronted/css/login.css">
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ── Panel izquierdo ── -->
+  <aside class="panel">
+    <div class="p-brand">
+      <div class="p-logo">A</div>
+      <div class="p-brand-name">
+        <strong>AcademiX</strong>
+        <span>Gestión de Extensión</span>
+      </div>
+    </div>
+
+    <div class="p-body">
+      <h2>Plataforma de extensión académica</h2>
+      <p>Centraliza actividades, participantes, horas y reportes. Dos niveles de acceso para mantener el control.</p>
+      <div class="role-chips">
+        <span class="role-chip admin">Administrador</span>
+        <span class="role-chip docente">Docente</span>
+      </div>
+    </div>
+
+    <div class="p-features">
+      <div class="p-feat">
+        <div class="p-feat-icon">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <div class="p-feat-text">
+          <strong>Roles admin y docente</strong>
+          <span>Permisos diferenciados por rol</span>
+        </div>
+      </div>
+      <div class="p-feat">
+        <div class="p-feat-icon">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        </div>
+        <div class="p-feat-text">
+          <strong>Historial de actividades</strong>
+          <span>Registro de acciones y cambios</span>
+        </div>
+      </div>
+      <div class="p-feat">
+        <div class="p-feat-icon">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+        </div>
+        <div class="p-feat-text">
+          <strong>Generador con IA</strong>
+          <span>Documentos académicos automáticos</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ── Formularios ── -->
+  <main class="main">
+    <div class="card">
+
+      <!-- ════════════════ LOGIN ════════════════ -->
+      <div class="view active" id="view-login">
+        <div class="fh">
+          <h1>Bienvenido de nuevo</h1>
+          <p>Ingresa tus credenciales para acceder al sistema</p>
+        </div>
+
+        <div id="login-alert"></div>
+
+        <form id="form-login" novalidate>
+          <div class="fg">
+            <label class="lbl" for="l-correo">Correo institucional <span class="req">*</span></label>
+            <div class="iw">
+              <svg class="ii" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <input class="fi" type="email" id="l-correo" placeholder="usuario@universidad.edu" autocomplete="email">
+            </div>
+            <div class="fm" id="l-correo-msg"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span></span></div>
+          </div>
+
+          <div class="fg">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+              <label class="lbl" for="l-pw" style="margin:0">Contraseña <span class="req">*</span></label>
+              <a class="sw" style="margin:0;font-size:12px" onclick="showView('view-forgot')">¿Olvidaste tu contraseña?</a>
+            </div>
+            <div class="iw">
+              <svg class="ii" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+              <input class="fi" type="password" id="l-pw" placeholder="••••••••" autocomplete="current-password">
+              <button type="button" class="ptg" onclick="togglePw('l-pw',this)" aria-label="Mostrar contraseña">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+              </button>
+            </div>
+            <div class="fm" id="l-pw-msg"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span></span></div>
+          </div>
+
+          <div class="fg" style="margin-bottom:22px">
+            <div class="cg">
+              <input type="checkbox" id="l-remember">
+              <label for="l-remember">Mantener sesión iniciada por 30 días</label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-p" id="btn-login">
+            <span id="btn-login-txt">Iniciar sesión</span>
+          </button>
+        </form>
+
+        <div class="div">o también</div>
+
+        <button class="btn btn-g" onclick="showView('view-register')">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>
+          Crear una cuenta nueva
+        </button>
+
+        <div class="sw">¿Necesitas ayuda? <a href="">Contactar soporte</a></div>
+      </div>
+
+      <!-- ════════════════ REGISTRO ════════════════ -->
+      <div class="view" id="view-register">
+        <div class="fh">
+          <h1>Crear cuenta</h1>
+          <p>Completa la información para registrarte en el sistema</p>
+        </div>
+
+        <div id="reg-alert"></div>
+
+        <div class="steps">
+          <div class="step active" id="stp1"><div class="step-n">1</div><span>Datos</span></div>
+          <div class="step-l"></div>
+          <div class="step" id="stp2"><div class="step-n">2</div><span>Seguridad</span></div>
+          <div class="step-l"></div>
+          <div class="step" id="stp3"><div class="step-n">3</div><span>Listo</span></div>
+        </div>
+
+        <form id="form-reg" novalidate>
+
+          <!-- Paso 1 -->
+          <div id="rp1">
+            <div class="fg">
+              <label class="lbl" for="r-nombre">Nombre completo <span class="req">*</span></label>
+              <div class="iw">
+                <svg class="ii" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                <input class="fi" type="text" id="r-nombre" placeholder="Ej: Juan Pérez" autocomplete="name">
+              </div>
+              <div class="fm" id="r-nombre-msg"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span></span></div>
+            </div>
+
+            <div class="fg">
+              <label class="lbl" for="r-correo">Correo institucional <span class="req">*</span></label>
+              <div class="iw">
+                <svg class="ii" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                <input class="fi" type="email" id="r-correo" placeholder="usuario@universidad.edu" autocomplete="email">
+              </div>
+              <div class="fm" id="r-correo-msg"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span></span></div>
+            </div>
+
+            <div class="row2">
+              <div class="fg">
+                <label class="lbl" for="r-rol">Rol <span class="req">*</span></label>
+                <div class="iw">
+                  <svg class="ii" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                  <select class="fi" id="r-rol" onchange="onRolChange(this.value)">
+                    <option value="">Seleccionar...</option>
+                    <option value="docente">Docente</option>
+                    <option value="admin">Administrador</option>
+                  </select>
+                </div>
+                <div class="fm" id="r-rol-msg"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span></span></div>
+                <div class="rol-info docente" id="rol-info-docente">Acceso a crear y gestionar sus propias actividades de extensión.</div>
+                <div class="rol-info admin"   id="rol-info-admin">Acceso total: gestión de usuarios, reportes y configuración del sistema.</div>
+              </div>
+
+              <div class="fg">
+                <label class="lbl" for="r-facultad">Facultad</label>
+                <div class="iw">
+                  <svg class="ii" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                  <input class="fi" type="text" id="r-facultad" placeholder="Ej: Ingeniería">
+                </div>
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-p" onclick="goStep2Reg()">
+              Continuar
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+
+          <!-- Paso 2 -->
+          <div id="rp2" style="display:none">
+            <div class="fg">
+              <label class="lbl" for="r-pw">Contraseña <span class="req">*</span></label>
+              <div class="iw">
+                <svg class="ii" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                <input class="fi" type="password" id="r-pw" placeholder="Mínimo 8 caracteres" autocomplete="new-password" oninput="evalStrength(this.value)">
+                <button type="button" class="ptg" onclick="togglePw('r-pw',this)" aria-label="Mostrar contraseña">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                </button>
+              </div>
+              <div class="pws" id="pws">
+                <div class="pw-bars">
+                  <div class="pw-bar" id="pb1"></div><div class="pw-bar" id="pb2"></div>
+                  <div class="pw-bar" id="pb3"></div><div class="pw-bar" id="pb4"></div>
+                </div>
+                <span class="pw-lbl" id="pwl"></span>
+              </div>
+              <div class="fm" id="r-pw-msg"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span></span></div>
+            </div>
+
+            <div class="fg">
+              <label class="lbl" for="r-confirm">Confirmar contraseña <span class="req">*</span></label>
+              <div class="iw">
+                <svg class="ii" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                <input class="fi" type="password" id="r-confirm" placeholder="Repite tu contraseña" autocomplete="new-password">
+                <button type="button" class="ptg" onclick="togglePw('r-confirm',this)" aria-label="Mostrar contraseña">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                </button>
+              </div>
+              <div class="fm" id="r-confirm-msg"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span></span></div>
+            </div>
+
+            <div class="pw-reqs">
+              <p>La contraseña debe contener:</p>
+              <div class="pw-reqs-grid">
+                <div class="ri" id="req-len"><svg fill="none" stroke="var(--text-hint)" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg><span>8+ caracteres</span></div>
+                <div class="ri" id="req-up"><svg fill="none" stroke="var(--text-hint)" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg><span>Mayúscula</span></div>
+                <div class="ri" id="req-num"><svg fill="none" stroke="var(--text-hint)" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg><span>Número</span></div>
+                <div class="ri" id="req-sp"><svg fill="none" stroke="var(--text-hint)" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg><span>Carácter especial</span></div>
+              </div>
+            </div>
+
+            <div class="fg">
+              <div class="cg">
+                <input type="checkbox" id="r-terms">
+                <label for="r-terms">Acepto los <a href="#">términos de uso</a> y la <a href="#">política de privacidad</a> de AcademiX</label>
+              </div>
+            </div>
+
+            <div style="display:flex;gap:10px">
+              <button type="button" class="btn btn-g" style="flex:0 0 110px" onclick="setStep(1)">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                Volver
+              </button>
+              <button type="submit" class="btn btn-p" id="btn-reg">
+                <span id="btn-reg-txt">Crear cuenta</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Paso 3: Éxito -->
+          <div id="rp3" style="display:none">
+            <div class="success-screen">
+              <div class="success-icon">
+                <svg fill="none" stroke="var(--success)" viewBox="0 0 24 24" style="width:32px;height:32px"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              </div>
+              <h2>¡Cuenta creada!</h2>
+              <p>Tu cuenta ha sido registrada exitosamente.<br>Ya puedes iniciar sesión con tu correo y contraseña.</p>
+              <button class="btn btn-p" onclick="showView('view-login')">Ir al inicio de sesión</button>
+            </div>
+          </div>
+
+        </form>
+
+        <div class="sw" id="reg-sw">¿Ya tienes cuenta? <a onclick="showView('view-login')">Iniciar sesión</a></div>
+      </div>
+
+      <!-- ════════════════ RECUPERAR CONTRASEÑA ════════════════ -->
+      <div class="view" id="view-forgot">
+        <div id="fp1">
+          <div class="fh">
+            <h1>Recuperar contraseña</h1>
+            <p>Ingresa tu correo institucional y te contactaremos para restablecer tu acceso</p>
+          </div>
+          <div id="forgot-alert"></div>
+          <div class="fg">
+            <label class="lbl" for="f-correo">Correo institucional <span class="req">*</span></label>
+            <div class="iw">
+              <svg class="ii" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <input class="fi" type="email" id="f-correo" placeholder="usuario@universidad.edu">
+            </div>
+            <div class="fm" id="f-correo-msg"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span></span></div>
+          </div>
+          <button class="btn btn-p" onclick="sendForgot()">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            Enviar solicitud
+          </button>
+          <div class="sw"><a onclick="showView('view-login')">← Volver al inicio de sesión</a></div>
+        </div>
+
+        <div id="fp2" style="display:none">
+          <div class="success-screen">
+            <div class="success-icon" style="background:var(--brand-soft)">
+              <svg fill="none" stroke="var(--brand)" viewBox="0 0 24 24" style="width:32px;height:32px"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <h2>Solicitud enviada</h2>
+            <p>Si el correo <strong id="fp-correo-lbl"></strong> está registrado, recibirás instrucciones para restablecer tu contraseña.</p>
+            <button class="btn btn-p" onclick="showView('view-login')">Volver al inicio de sesión</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script>
+  // ── Configuración ────────────────────────────────────────────────────────
+  const API       = '/api/auth';       // ✅ Relativa — funciona en cualquier host
+  const TOKEN_KEY = 'academix_token';
+
+  // ── Redirección si ya hay sesión activa ──────────────────────────────────
+  (function checkSession() {
+    const token = localStorage.getItem(TOKEN_KEY);
+    if (!token) return;
+    fetch(`${API}/me`, { headers: { Authorization: `Bearer ${token}` } })
+      .then(r => r.ok ? r.json() : Promise.reject())
+      .then(() => { window.location.href = '/dashboard'; })
+      .catch(() => localStorage.removeItem(TOKEN_KEY));
+  })();
+
+  // ── Navegación entre vistas ──────────────────────────────────────────────
+  function showView(id) {
+    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    if (id === 'view-register') {
+      setStep(1);
+      document.getElementById('form-reg').reset();
+      resetStrength();
+      clearAllAlerts();
+      onRolChange('');
+    }
+    if (id === 'view-forgot') {
+      document.getElementById('fp1').style.display = 'block';
+      document.getElementById('fp2').style.display = 'none';
+    }
+  }
+
+  // ── Mensajes de campo ────────────────────────────────────────────────────
+  function setMsg(id, txt, cls) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.querySelector('span').textContent = txt;
+    el.className = 'fm show ' + cls;
+  }
+  function clearMsg(id) {
+    const el = document.getElementById(id);
+    if (el) el.className = 'fm';
+  }
+  function setFi(id, state) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.className = 'fi' + (state ? ' ' + state : '');
+  }
+
+  // ── Alertas globales ─────────────────────────────────────────────────────
+  const ALERT_ICONS = {
+    d: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>',
+    s: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>',
+    i: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>'
+  };
+  const ALERT_CLS = { d: 'alert-d', s: 'alert-s', i: 'alert-i' };
+
+  function showAlert(containerId, txt, type) {
+    document.getElementById(containerId).innerHTML = `
+      <div class="alert ${ALERT_CLS[type]}">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">${ALERT_ICONS[type]}</svg>
+        <span>${txt}</span>
+      </div>`;
+  }
+  function clearAlert(id) { const el = document.getElementById(id); if (el) el.innerHTML = ''; }
+  function clearAllAlerts() { ['login-alert','reg-alert','forgot-alert'].forEach(clearAlert); }
+
+  // ── Toggle contraseña ────────────────────────────────────────────────────
+  const EYE_ON  = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>';
+  const EYE_OFF = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"/>';
+  function togglePw(id, btn) {
+    const inp = document.getElementById(id);
+    const isText = inp.type === 'text';
+    inp.type = isText ? 'password' : 'text';
+    btn.querySelector('svg').innerHTML = isText ? EYE_ON : EYE_OFF;
+  }
+
+  // ── Rol ──────────────────────────────────────────────────────────────────
+  function onRolChange(val) {
+    document.getElementById('rol-info-docente').style.display = val === 'docente' ? 'block' : 'none';
+    document.getElementById('rol-info-admin').style.display   = val === 'admin'   ? 'block' : 'none';
+  }
+
+  // ── Fortaleza de contraseña ──────────────────────────────────────────────
+  function evalStrength(val) {
+    const wrap = document.getElementById('pws');
+    if (!val) { wrap.style.display = 'none'; return; }
+    wrap.style.display = 'block';
+
+    const checks = [val.length >= 8, /[A-Z]/.test(val), /[0-9]/.test(val), /[^A-Za-z0-9]/.test(val)];
+    const score  = checks.filter(Boolean).length;
+    const cls    = score <= 1 ? 'weak' : score <= 3 ? 'fair' : 'strong';
+    const labels = { weak: 'Débil', fair: 'Regular', strong: 'Fuerte' };
+
+    ['pb1','pb2','pb3','pb4'].forEach((id, i) => {
+      document.getElementById(id).className = 'pw-bar ' + (i < score ? cls : '');
+    });
+    const lbl = document.getElementById('pwl');
+    lbl.textContent = labels[cls];
+    lbl.className = 'pw-lbl ' + cls;
+
+    updateReq('req-len', checks[0]);
+    updateReq('req-up',  checks[1]);
+    updateReq('req-num', checks[2]);
+    updateReq('req-sp',  checks[3]);
+  }
+
+  function updateReq(id, ok) {
+    const el  = document.getElementById(id);
+    const svg = el.querySelector('svg');
+    const sp  = el.querySelector('span');
+    const col = ok ? 'var(--success)' : 'var(--text-hint)';
+    svg.style.stroke = col; sp.style.color = col;
+    svg.innerHTML = ok
+      ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>'
+      : '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>';
+  }
+
+  function resetStrength() {
+    ['pb1','pb2','pb3','pb4'].forEach(id => document.getElementById(id).className = 'pw-bar');
+    document.getElementById('pwl').textContent = '';
+    document.getElementById('pws').style.display = 'none';
+    ['req-len','req-up','req-num','req-sp'].forEach(id => updateReq(id, false));
+  }
+
+  // ── Validaciones ─────────────────────────────────────────────────────────
+  const isEmail  = v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  const isStrong = v => v.length >= 8 && /[A-Z]/.test(v) && /[0-9]/.test(v) && /[^A-Za-z0-9]/.test(v);
+
+  // ── Spinner en botón ─────────────────────────────────────────────────────
+  function btnLoading(btnId, txtId, loading, label = '') {
+    const btn = document.getElementById(btnId);
+    const txt = document.getElementById(txtId);
+    btn.disabled = loading;
+    if (loading) {
+      txt.textContent = '';
+      btn.insertAdjacentHTML('beforeend', '<div class="sp"></div>');
+    } else {
+      btn.querySelector('.sp')?.remove();
+      if (label) txt.textContent = label;
+    }
+  }
+
+  // ════════════════════════════════════════════════════════════════════════
+  // LOGIN
+  // ════════════════════════════════════════════════════════════════════════
+  document.getElementById('form-login').addEventListener('submit', async e => {
+    e.preventDefault();
+    clearAlert('login-alert');
+    clearMsg('l-correo-msg'); clearMsg('l-pw-msg');
+
+    const correo   = document.getElementById('l-correo').value.trim().toLowerCase();
+    const password = document.getElementById('l-pw').value;
+    const remember = document.getElementById('l-remember').checked;
+    let ok = true;
+
+    if (!correo || !isEmail(correo)) {
+      setMsg('l-correo-msg', 'Ingresa un correo válido', 'err');
+      setFi('l-correo', 'err'); ok = false;
+    } else { clearMsg('l-correo-msg'); setFi('l-correo', 'ok'); }
+
+    if (!password) {
+      setMsg('l-pw-msg', 'La contraseña es obligatoria', 'err');
+      setFi('l-pw', 'err'); ok = false;
+    } else { clearMsg('l-pw-msg'); setFi('l-pw', 'ok'); }
+
+    if (!ok) return;
+
+    btnLoading('btn-login', 'btn-login-txt', true);
+
+    try {
+      const res  = await fetch(`${API}/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ correo, password, remember }),
+      });
+      const data = await res.json();
+
+      if (!res.ok) {
+        showAlert('login-alert', data.error || 'Credenciales incorrectas', 'd');
+        return;
+      }
+
+      localStorage.setItem(TOKEN_KEY, data.token);
+      localStorage.setItem('academix_user', JSON.stringify(data.usuario));
+      showAlert('login-alert', `Bienvenido, <strong>${data.usuario.nombre}</strong>. Redirigiendo...`, 's');
+
+      setTimeout(() => { window.location.href = '/dashboard'; }, 1200);
+
+    } catch {
+      showAlert('login-alert', 'No se pudo conectar con el servidor. Intenta de nuevo.', 'd');
+    } finally {
+      btnLoading('btn-login', 'btn-login-txt', false, 'Iniciar sesión');
+    }
+  });
+
+  // ════════════════════════════════════════════════════════════════════════
+  // REGISTRO
+  // ════════════════════════════════════════════════════════════════════════
+  function setStep(n) {
+    [1,2,3].forEach(i => {
+      const st = document.getElementById('stp' + i);
+      st.className = 'step' + (i < n ? ' done' : i === n ? ' active' : '');
+    });
+    document.getElementById('rp1').style.display = n === 1 ? 'block' : 'none';
+    document.getElementById('rp2').style.display = n === 2 ? 'block' : 'none';
+    document.getElementById('rp3').style.display = n === 3 ? 'block' : 'none';
+    document.getElementById('reg-sw').style.display = n === 3 ? 'none' : 'block';
+  }
+
+  function goStep2Reg() {
+    let ok = true;
+    const nombre = document.getElementById('r-nombre').value.trim();
+    const correo = document.getElementById('r-correo').value.trim().toLowerCase();
+    const rol    = document.getElementById('r-rol').value;
+
+    if (!nombre) { setMsg('r-nombre-msg','El nombre es obligatorio','err'); setFi('r-nombre','err'); ok = false; }
+    else { clearMsg('r-nombre-msg'); setFi('r-nombre','ok'); }
+
+    if (!correo || !isEmail(correo)) { setMsg('r-correo-msg','Ingresa un correo válido','err'); setFi('r-correo','err'); ok = false; }
+    else { clearMsg('r-correo-msg'); setFi('r-correo','ok'); }
+
+    if (!rol) { setMsg('r-rol-msg','Selecciona un rol','err'); ok = false; }
+    else clearMsg('r-rol-msg');
+
+    if (ok) setStep(2);
+  }
+
+  document.getElementById('form-reg').addEventListener('submit', async e => {
+    e.preventDefault();
+    clearAlert('reg-alert');
+
+    const pw      = document.getElementById('r-pw').value;
+    const confirm = document.getElementById('r-confirm').value;
+    const terms   = document.getElementById('r-terms').checked;
+    let ok = true;
+
+    if (!pw || !isStrong(pw)) {
+      setMsg('r-pw-msg','La contraseña no cumple los requisitos','err'); setFi('r-pw','err'); ok = false;
+    } else { clearMsg('r-pw-msg'); setFi('r-pw','ok'); }
+
+    if (pw !== confirm) {
+      setMsg('r-confirm-msg','Las contraseñas no coinciden','err'); setFi('r-confirm','err'); ok = false;
+    } else if (confirm) { clearMsg('r-confirm-msg'); setFi('r-confirm','ok'); }
+
+    if (!terms) { showAlert('reg-alert','Debes aceptar los términos de uso para continuar','d'); ok = false; }
+    if (!ok) return;
+
+    const nombre   = document.getElementById('r-nombre').value.trim();
+    const correo   = document.getElementById('r-correo').value.trim().toLowerCase();
+    const rol      = document.getElementById('r-rol').value;
+    const facultad = document.getElementById('r-facultad').value.trim() || null;
+
+    btnLoading('btn-reg', 'btn-reg-txt', true);
+
+    try {
+      const res  = await fetch(`${API}/register`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nombre, correo, password: pw, rol, facultad }),
+      });
+      const data = await res.json();
+
+      if (res.status === 409) {
+        showAlert('reg-alert','Este correo ya está registrado. <a onclick="showView(\'view-login\')" style="font-weight:600;cursor:pointer;text-decoration:underline">Iniciar sesión</a>','d');
+        return;
+      }
+      if (!res.ok) { showAlert('reg-alert', data.error || 'Error al crear la cuenta', 'd'); return; }
+
+      setStep(3);
+    } catch {
+      showAlert('reg-alert','No se pudo conectar con el servidor.','d');
+    } finally {
+      btnLoading('btn-reg', 'btn-reg-txt', false, 'Crear cuenta');
+    }
+  });
+
+  // ════════════════════════════════════════════════════════════════════════
+  // RECUPERAR CONTRASEÑA
+  // ════════════════════════════════════════════════════════════════════════
+  async function sendForgot() {
+    clearMsg('f-correo-msg'); clearAlert('forgot-alert');
+    const correo = document.getElementById('f-correo').value.trim().toLowerCase();
+
+    if (!correo || !isEmail(correo)) {
+      setMsg('f-correo-msg','Ingresa un correo válido','err');
+      setFi('f-correo','err'); return;
+    }
+    setFi('f-correo','ok');
+
+    try {
+      await fetch(`${API}/forgot-password`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ correo }),
+      });
+    } catch { /* respuesta idéntica siempre — evita enumeración de correos */ }
+
+    document.getElementById('fp-correo-lbl').textContent = correo;
+    document.getElementById('fp1').style.display = 'none';
+    document.getElementById('fp2').style.display = 'block';
+  }
+
+  // ── Validación en tiempo real ─────────────────────────────────────────────
+  document.getElementById('l-correo').addEventListener('blur', function () {
+    if (!this.value) return;
+    if (!isEmail(this.value)) { setMsg('l-correo-msg','Correo inválido','err'); setFi('l-correo','err'); }
+    else { clearMsg('l-correo-msg'); setFi('l-correo','ok'); }
+  });
+  document.getElementById('r-confirm').addEventListener('input', function () {
+    const pw = document.getElementById('r-pw').value;
+    if (!this.value) return;
+    if (this.value === pw) { clearMsg('r-confirm-msg'); setFi('r-confirm','ok'); }
+    else { setMsg('r-confirm-msg','Las contraseñas no coinciden','err'); setFi('r-confirm','err'); }
+  });
+</script>
+</body>
+</html>
